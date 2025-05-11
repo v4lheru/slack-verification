@@ -3,13 +3,13 @@ FROM python:3.9-slim
 WORKDIR /app
 
 # Copy requirements first for better caching
-COPY slack_verification_requirements.txt requirements.txt
+COPY requirements.txt requirements.txt
 
 # Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy application code
-COPY slack_verification.py app.py
+COPY app.py app.py
 
 # Expose port
 EXPOSE 8000
